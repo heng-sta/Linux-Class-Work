@@ -1,3 +1,1 @@
-test
-$test$
-test2
+This repository contains labs and assignments for the Linux course.
