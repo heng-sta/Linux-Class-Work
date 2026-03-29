@@ -6,7 +6,7 @@ struct list_node
     int val;
     struct list_node *next;
 };
-struct list_node *middle_node(struct list_node *head)
+struct list_node *middle_node(struct list_node *head)// fast and slow pointers
 {
     struct list_node *slow, *fast;
     slow = fast = head;
