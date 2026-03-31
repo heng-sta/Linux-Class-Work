@@ -1,12 +1,13 @@
 #include <stdio.h> //快慢指標
 #include <stdlib.h>
 #include <time.h>
+#include <unistd.h>
 struct list_node
 {
     int val;
     struct list_node *next;
 };
-struct list_node *middle_node(struct list_node *head)// fast and slow pointers
+struct list_node *middle_node(struct list_node *head)
 {
     struct list_node *slow, *fast;
     slow = fast = head;
@@ -49,7 +50,7 @@ struct list_node *create_random_list(int len, struct list_node **pool_ori_head)
 }
 int main(int arg_count, char *arg_vector[]) // 前者是輸入參數數量 後者是參數陣列的指標
 {
-    srand(time(NULL));
+    srand(time(NULL) * getpid());
     long list_len = atol(arg_vector[1]);
     struct list_node *pool_ori_head = NULL;
     struct list_node *head = create_random_list(list_len, &pool_ori_head);
